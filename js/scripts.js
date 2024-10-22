@@ -1,22 +1,5 @@
 window.addEventListener('DOMContentLoaded', event => {
-
-    // Navbar shrink function
-    var navbarShrink = function () {
-        const navbarCollapsible = document.body.querySelector('#mainNav');
-        if (!navbarCollapsible) {
-            return;
-        }
-        if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
-        } else {
-            navbarCollapsible.classList.add('navbar-shrink')
-        }
-
-    };
-
-    // Shrink the navbar 
-    navbarShrink();
-
+    
     // Shrink the navbar when page is scrolled
     document.addEventListener('scroll', navbarShrink);
 
@@ -27,7 +10,7 @@ window.addEventListener('DOMContentLoaded', event => {
             target: '#mainNav',
             rootMargin: '0px 0px -40%',
         });
-    };
+    }
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
@@ -41,5 +24,19 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
+    
+    // Function to handle navbar shrink effect and transition
+    function navbarShrink() {
+        const navbar = document.body.querySelector('#mainNav');
+        if (!navbar) {
+            return;
+        }
 
+        // Add/remove the 'navbar-shrink' class based on scroll position
+        if (window.scrollY > 0) {
+            navbar.classList.add('navbar-shrink');
+        } else {
+            navbar.classList.remove('navbar-shrink');
+        }
+    }
 });
