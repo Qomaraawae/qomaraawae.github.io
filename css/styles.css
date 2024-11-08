@@ -11674,7 +11674,7 @@ body {
 /* Additional style to adjust the mobile navbar */
 @media (max-width: 992px) {
   .navbar-collapse {
-    background-color: white;
+    background-color: transparent;
   }
   .navbar-toggler {
     margin-left: auto;
